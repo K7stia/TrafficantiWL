@@ -23,14 +23,18 @@
         button {
            background-color: #fdf07d;
         }
+        .block{
+            background-color: #1b1b1b;
+        }
     </style>
 </head>
 <body>
-    <h1>WL checker for Linpuss Crew</h1>
-    <input type="text" id="walletAddress" placeholder="Enter wallet address (0x...)">
-    <button onclick="checkAddress()">Check</button>
-    <p id="result"></p>
-
+    <!-- h1>WL checker for Linpuss Crew</h1 -->
+    <div class="block">
+        <input type="text" id="walletAddress" placeholder="Enter wallet address (0x...)">
+        <button onclick="checkAddress()">Check</button>
+        <p id="result"></p>
+    </div>
     <script>
         async function checkAddress() {
             const address = document.getElementById('walletAddress').value;
