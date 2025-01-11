@@ -12,7 +12,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #caf75c;
+            background-color: #1e2919;
             margin: 0;
         }
 
@@ -30,6 +30,7 @@
         input, button {
             margin: 10px 0; 
             padding: 10px;
+            border: none;
             border-radius: 9px;
             outline: none;
         }
@@ -76,7 +77,7 @@
 <body>
     <div class="block">
         <label for="walletAddress">Input Wallet Address</label>
-        <input type="text" id="walletAddress" placeholder="...">
+        <input type="text" id="walletAddress" placeholder="0x...">
         <button onclick="checkAddress()">Check Now</button>
         <p id="result"></p>
     </div>
