@@ -38,6 +38,9 @@
             align-items: center;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px; /* Обмеження ширини для блоків */
+            margin: 20px auto;
         }
 
         input, button {
@@ -50,26 +53,26 @@
 
         input {
             color: #fff;
-            font-size: 18px;
+            font-size: 16px;
             border: 1px #a0dd8f solid;
-            width: 380px;
+            width: 95%; /* Ширина на всю доступну ширину */
             height: 33px;
             background-color: #1b1b1b;
             box-shadow: 0px 1px 4px 0px #79fa50;
         }
 
         button {
-            width: 280px;
+            width: 100%; /* Ширина кнопки адаптивна */
             height: 55px;
             margin-top: 20px;
             margin-bottom: 20px;
             background-color: #79fa50;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s;
             box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.3),
-            0px 1px 4px 0px #79fa50;;
+            0px 1px 4px 0px #79fa50;
         }
 
         button:hover {
@@ -80,7 +83,7 @@
 
         #result {
             margin-top: 1px;
-            font-size: 18px;
+            font-size: 16px;
             color: #fff;
             text-align: center;
         }
@@ -90,9 +93,43 @@
         }
         label {
             margin-left: 8px;
-            font-size: 16px;
+            font-size: 14px;
             color: #a0dd8f;
             align-self: flex-start; 
+        }
+
+        /* Адаптивні стилі */
+        @media (max-width: 768px) {
+            .checker {
+                width: 80%; /* Зменшена ширина для мобільних */
+            }
+            .crew {
+                width: 80%; /* Зменшена ширина для мобільних */
+            }
+            input {
+                font-size: 14px; /* Зменшений текст для мобільних */
+            }
+            button {
+                font-size: 16px; /* Менший текст на кнопках */
+            }
+            label {
+                font-size: 12px; /* Менший текст для заголовків */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .checker, .crew {
+                width: 90%; /* Ще менше для вузьких екранів */
+            }
+            .block {
+                padding: 15px; /* Зменшення внутрішніх відступів */
+            }
+            button {
+                height: 50px; /* Менша висота кнопок */
+            }
+            input {
+                height: 30px; /* Менша висота полів вводу */
+            }
         }
     </style>
 </head>
