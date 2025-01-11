@@ -38,8 +38,9 @@
         }
 
         input {
+            border: 1px #a0dd8f solid;
             width: 380px;
-            background-color: #fff;
+            background-color: #1b1b1b;
             box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -63,14 +64,14 @@
         label {
             margin-bottom: 5px; /* Відступ між текстом і input */
             font-size: 16px;
-            color: #fdf07d;
+            color: #a0dd8f;
             align-self: flex-start; /* Текст вирівнюється по лівому краю */
         }
     </style>
 </head>
 <body>
     <div class="block">
-        <label for="walletAddress">Wallet Address</label>
+        <label for="walletAddress">Input Wallet Address</label>
         <input type="text" id="walletAddress" placeholder="Enter wallet address (0x...)">
         <button onclick="checkAddress()">Check</button>
         <p id="result"></p>
