@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Address Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wallet Address Checker</h1>
+    <input type="text" id="walletAddress" placeholder="Enter wallet address">
+    <button onclick="checkAddress()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        async function checkAddress() {
+            const address = document.getElementById('walletAddress').value;
+            const response = await fetch('wallets.json');
+            const whiteList = await response.json();
+            if (whiteList.includes(address)) {
+                document.getElementById('result').textContent = 'Congratulations, you are on the White List';
+            } else {
+                document.getElementById('result').textContent = 'Sorry, you are not on the White List';
+            }
+        }
+    </script>
+</body>
+</html>
