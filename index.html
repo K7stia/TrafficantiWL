@@ -149,23 +149,24 @@
 
     <script>
         async function checkAddress() {
-            const address = document.getElementById('walletAddress').value.trim();
+    const address = document.getElementById('walletAddress').value.trim().toLowerCase();
 
-            // Завантажуємо файл CSV
-            const response = await fetch('wallets.csv');
-            const csvData = await response.text();
+    // Завантажуємо файл CSV
+    const response = await fetch('wallets.csv');
+    const csvData = await response.text();
 
-            // Перетворюємо CSV в масив
-            const lines = csvData.split('\n');
-            const whiteList = lines.map(line => line.trim());
+    // Перетворюємо CSV в масив
+    const lines = csvData.split('\n');
+    const whiteList = lines.map(line => line.trim().toLowerCase());
 
-            // Перевіряємо, чи є адреса у списку
-            if (whiteList.includes(address)) {
-                document.getElementById('result').textContent = 'Congratulations, you are on the White List';
-            } else {
-                document.getElementById('result').textContent = 'Sorry, you are not on the White List';
-            }
-        }
+    // Перевіряємо, чи є адреса у списку
+    if (whiteList.includes(address)) {
+        document.getElementById('result').textContent = 'Congratulations, you are on the White List';
+    } else {
+        document.getElementById('result').textContent = 'Sorry, you are not on the White List';
+    }
+}
+
     </script>
 </body>
 </html>
